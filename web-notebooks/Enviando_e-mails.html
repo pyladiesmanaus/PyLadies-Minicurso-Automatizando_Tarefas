@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>smtp</title>
+<title>Enviando_e-mails</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13113,13 +13113,32 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Enviando-E-Mails">Enviando E-Mails<a class="anchor-link" href="#Enviando-E-Mails">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>SMTP = <em>Simple Mail Transfer Protocol</em>.</li>
+</ul>
+<ul>
+<li>Define como os e-mails devem ser enviados.</li>
+</ul>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># conda install stmplib</span>
-<span class="kn">import</span> <span class="nn">smtplib</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">smtplib</span>
 </pre></div>
 
     </div>
@@ -13127,9 +13146,17 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Configurar-o-provedor-de-e-mail">Configurar o provedor de e-mail<a class="anchor-link" href="#Configurar-o-provedor-de-e-mail">&#182;</a></h2><p>O nome de domínio do servidor SMTP normalmente será o nome de domínio de seu provedor de emails com SMTP. na frente.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">smtpObj</span> <span class="o">=</span> <span class="n">smtplib</span><span class="o">.</span><span class="n">SMTP</span><span class="p">(</span><span class="s1">&#39;smtp.gmail.com&#39;</span><span class="p">,</span> <span class="mi">587</span><span class="p">)</span>
@@ -13140,9 +13167,16 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Testar-a-conex&#227;o">Testar a conex&#227;o<a class="anchor-link" href="#Testar-a-conex&#227;o">&#182;</a></h2>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">smtpObj</span><span class="o">.</span><span class="n">ehlo</span><span class="p">()</span>
@@ -13158,14 +13192,14 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[29]:</div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
 <pre>(250,
- b&#39;smtp.gmail.com at your service, [2804:14d:1483:98e6:7844:2d86:6f8:34e0]\nSIZE 35882577\n8BITMIME\nSTARTTLS\nENHANCEDSTATUSCODES\nPIPELINING\nCHUNKING\nSMTPUTF8&#39;)</pre>
+ b&#39;smtp.gmail.com at your service, [2804:14d:1484:4256:8054:2d61:afb5:87d6]\nSIZE 35882577\n8BITMIME\nSTARTTLS\nENHANCEDSTATUSCODES\nPIPELINING\nCHUNKING\nSMTPUTF8&#39;)</pre>
 </div>
 
 </div>
@@ -13173,10 +13207,27 @@ div#notebook {
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Se retornou <code>250</code>, é porque está tudo OK.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Precisamos-deixar-nossa-aplica&#231;&#227;o-segura-utilizando-criptografia-TLS">Precisamos deixar nossa aplica&#231;&#227;o segura utilizando criptografia TLS<a class="anchor-link" href="#Precisamos-deixar-nossa-aplica&#231;&#227;o-segura-utilizando-criptografia-TLS">&#182;</a></h2>
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">smtpObj</span><span class="o">.</span><span class="n">starttls</span><span class="p">()</span>
@@ -13192,7 +13243,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[30]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -13207,12 +13258,42 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>O <code>220</code> no valor de retorno informa que o servidor está pronto.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Vamos-realizar-login">Vamos realizar login<a class="anchor-link" href="#Vamos-realizar-login">&#182;</a></h2>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">smtpObj</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="s1">&#39;login&#39;</span><span class="p">,</span> <span class="s1">&#39;senha&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">remetente</span> <span class="o">=</span> <span class="s1">&#39;exemplo.python@gmail.com&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">smtpObj</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">remetente</span><span class="p">,</span> <span class="s1">&#39;exemplo123&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13225,7 +13306,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[31]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -13240,16 +13321,69 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Agora-iremos-enviar-nosso-primeiro-e-mail-com-Python">Agora iremos enviar nosso primeiro e-mail com Python<a class="anchor-link" href="#Agora-iremos-enviar-nosso-primeiro-e-mail-com-Python">&#182;</a></h2>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mailList</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;email1&#39;</span><span class="p">,</span> <span class="s1">&#39;email2&#39;</span><span class="p">,</span> <span class="s2">&quot;email3&quot;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">body</span> <span class="o">=</span> <span class="s1">&#39;Subject: So long.</span><span class="se">\n</span><span class="s1">Dear Alice, so long and thanks for all the fish. Sincerely, Bob&#39;</span>
+
+<span class="n">destinatario</span> <span class="o">=</span> <span class="s1">&#39;email&#39;</span> <span class="c1"># Preencha o e-mail do destinatário aqui</span>
+
+<span class="n">smtpObj</span><span class="o">.</span><span class="n">sendmail</span><span class="p">(</span><span class="n">remetente</span><span class="p">,</span> <span class="n">destinatario</span><span class="p">,</span>  <span class="n">body</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#201;-bem-simples-essa-tarefa.-Mas-se-eu-quiser-enviar-e-mails-para-mais-de-1-pessoa?">&#201; bem simples essa tarefa. Mas se eu quiser enviar e-mails para mais de 1 pessoa?<a class="anchor-link" href="#&#201;-bem-simples-essa-tarefa.-Mas-se-eu-quiser-enviar-e-mails-para-mais-de-1-pessoa?">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mailList</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;email_1&#39;</span><span class="p">,</span> 
+            <span class="s1">&#39;email_2&#39;</span><span class="p">]</span> <span class="c1"># Preencha os e-mails dos destinatários aqui</span>
+
 <span class="n">body</span> <span class="o">=</span> <span class="s1">&#39;Subject: So long.</span><span class="se">\n</span><span class="s1">Dear Alice, so long and thanks for all the fish. Sincerely, Bob&#39;</span>
 
 <span class="k">for</span> <span class="n">mail</span> <span class="ow">in</span> <span class="n">mailList</span><span class="p">:</span>
-    <span class="n">smtpObj</span><span class="o">.</span><span class="n">sendmail</span><span class="p">(</span><span class="s1">&#39;remetente&#39;</span><span class="p">,</span> <span class="n">mail</span><span class="p">,</span>  <span class="n">body</span><span class="p">)</span>
+    <span class="n">smtpObj</span><span class="o">.</span><span class="n">sendmail</span><span class="p">(</span><span class="n">remetente</span><span class="p">,</span> <span class="n">mail</span><span class="p">,</span>  <span class="n">body</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13257,19 +13391,26 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Iremos-realizar-uma-pequena-modifica&#231;&#227;o.-Agora,-a-minha-lista-tem-o-nome-da-pessoa-e-o-seu-e-mail">Iremos realizar uma pequena modifica&#231;&#227;o. Agora, a minha lista tem o nome da pessoa e o seu e-mail<a class="anchor-link" href="#Iremos-realizar-uma-pequena-modifica&#231;&#227;o.-Agora,-a-minha-lista-tem-o-nome-da-pessoa-e-o-seu-e-mail">&#182;</a></h2>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mailDict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name1&#39;</span> <span class="p">:</span> <span class="s2">&quot;email1&quot;</span><span class="p">,</span> <span class="s2">&quot;name2&quot;</span> <span class="p">:</span> <span class="s2">&quot;mail2&quot;</span><span class="p">}</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mailDict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name_1&#39;</span> <span class="p">:</span> <span class="s1">&#39;email_1&#39;</span><span class="p">,</span> 
+            <span class="s1">&#39;name_2&#39;</span> <span class="p">:</span> <span class="s1">&#39;email_2&#39;</span><span class="p">}</span> <span class="c1"># Preencha os nomes e e-mails dos destinatários aqui</span>
 
 <span class="n">subject</span> <span class="o">=</span> <span class="s1">&#39;Subject: So long.</span><span class="se">\n</span><span class="s1">&#39;</span>
 
-
 <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">mail</span> <span class="ow">in</span> <span class="n">mailDict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="n">body</span> <span class="o">=</span> <span class="n">subject</span> <span class="o">+</span> <span class="s1">&#39;Dear &#39;</span> <span class="o">+</span>  <span class="n">name</span> <span class="o">+</span> <span class="s1">&#39;, so long and thanks for all the fish. Sincerely, Bob&#39;</span>
-    <span class="n">smtpObj</span><span class="o">.</span><span class="n">sendmail</span><span class="p">(</span><span class="s1">&#39;remetente&#39;</span><span class="p">,</span> <span class="n">mail</span><span class="p">,</span>  <span class="n">body</span><span class="p">)</span>
+    <span class="n">smtpObj</span><span class="o">.</span><span class="n">sendmail</span><span class="p">(</span><span class="n">remetente</span><span class="p">,</span> <span class="n">mail</span><span class="p">,</span>  <span class="n">body</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13277,9 +13418,16 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Ap&#243;s-isso,-iremos-fechar-a-conex&#227;o">Ap&#243;s isso, iremos fechar a conex&#227;o<a class="anchor-link" href="#Ap&#243;s-isso,-iremos-fechar-a-conex&#227;o">&#182;</a></h2>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">smtpObj</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
@@ -13295,30 +13443,17 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[20]:</div>
+    <div class="prompt output_prompt">Out[11]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>(221, b&#39;2.0.0 closing connection r195-v6sm1326669vkr.1 - gsmtp&#39;)</pre>
+<pre>(221, b&#39;2.0.0 closing connection w4-v6sm1451139uaj.8 - gsmtp&#39;)</pre>
 </div>
 
 </div>
 
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
 </div>
 </div>
 
